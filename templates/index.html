@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO App</title>
-    <h1>App</h1>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoApp</title>
+    <h1>TODO</h1>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <label name="title">TODO Title: </label>
+        <input type="text" name="text" placeholder="Enter TODO...." />
+
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    {% for todo in todolists %}
+    <p>{{ todo.id_ }} | {{ todo.title }}</p>
+
+    {% if todo.completed == False %}
+    <span>Not Completed</span>
+    {% else %}
+    <span>Completed</span>
+    {% endif %} {% endfor %}
+  </body>
 </html>
